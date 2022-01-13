@@ -80,6 +80,11 @@ section.addEventListener('click', e => {
         carritos.push({ productId, descrip, price});
         let carritoEnJson = JSON.stringify(carritos);
         localStorage.setItem('CarritoProductos', carritoEnJson);
+        // Swal.fire(
+        //     '¡WOW! ¡Felicidades!',
+        //     'Agregaste tu producto al carrito',
+        //     'success'
+        //   )
         // Agregar HTML al carrito
         let article = document.createElement('article');
         article.className = 'col col-sm-12 col-md-12 col-lg-12 col-xl-12'
@@ -112,7 +117,7 @@ if (arrayLocal !== "") {
                                 <img src="../imagenes/ft-nosotros.jpg" alt="" class="imgCarrito col col-md-6 col-lg-6 col-6">
         
                                     <div class="col col-md-6 col-lg-6 col-6">
-                                        <h5>${producto.productId} - ${producto.descrip}</h5>
+                                        <h5>${producto.productId} - ${producto.descrip}-${producto.price}</h5>
                                     </div>
                             </div>`
         sectionCarrito.appendChild(article);

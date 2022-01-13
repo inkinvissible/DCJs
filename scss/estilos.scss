@@ -11,6 +11,8 @@ $verde:#bada55;
 body {
   min-height: 100%;
   font-family: 'Josefin Sans', sans-serif;
+  max-width: 100%;
+  
 
 }
 
@@ -250,17 +252,31 @@ header {
   justify-content: space-between;
   align-items: center;
 
+
 }
 
 .logoImg {
   background-color: #bada55;
   height: 12vh;
-
-
 }
 
-.headerLg {
+.logo {
+  width: 100%;
+  background-color: #BADA55;
+}
+
+.headerLg{
+  display: grid;
   padding-left: 0 !important;
+  position: fixed;
+  top: 0%;
+  left: 0.8%;
+  grid-template-areas:
+    "logo social"
+    "logo menu";
+  grid-template-columns: 0.4fr;
+  z-index: 13;
+  padding-right: 0;
 }
 
 .nav {
@@ -268,29 +284,27 @@ header {
 }
 
 .nav ul li {
-  display: inline;
-}
-
-.nav ul li {
   /*display: inline;*/
 
   margin-top: 5%;
   margin-left: 25px;
+  display: inline;
 
 }
 
 .nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   padding: 10px;
   border-radius: 40px;
 }
 
-.nav ul li a:hover {
+.nav ul li a:hover,
+.nav ul li a:focus {
   background-color: #bada55;
   color: #646363;
-  transition: all 0.5s ease-in-out;
+  transition: all 0 .5s ease-in-out;
 
 }
 
@@ -300,6 +314,11 @@ header {
   grid-area: auto;
 
   height: 12vh;
+}
+
+.menu {
+  width: 100%;
+  background-color: #646363;
 }
 
 .social a i {
@@ -423,6 +442,162 @@ p {
   border: 2px solid white;
 }
 
+/*****************
+Inicio, Index
+******************/
+
+.carousel-item img {
+  box-shadow: -2px -142px 110px -72px rgba(79, 79, 79, 0.81) inset;
+  -webkit-box-shadow: -2px -142px 110px -72px rgba(79, 79, 79, 0.81) inset;
+  -moz-box-shadow: -2px -142px 110px -72px rgba(79, 79, 79, 0.81) inset;
+}
+.principalSection{
+  padding-left: 0;
+  padding-right: 0;
+}
+.difuminado {
+  position: absolute;
+  width: 90%;
+  border-radius: 20px;
+  top: 13%;
+  left: 5%;
+  right: 5%;
+  z-index: 9;
+  -webkit-box-shadow: inset -1px 2px 37px 50px #fff, -1px 2px 37px 31px #fff;
+  box-shadow: inset -1px 2px 37px 50px #fff, -1px 2px 37px 31px #fff;
+  background: #BADA55;
+}
+/*******************
+Hero Section, Index
+********************/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../imagenes/hero-auto-bmw.jpg");
+  background-repeat: no-repeat;
+}
+#hero .hero-container {
+  position: absolute;
+  
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+  
+    backdrop-filter: blur(5px);
+   
+
+}
+
+#hero .hero-logo {
+  margin-bottom: 30px;
+}
+#hero h1 {
+  margin: 0 0 30px 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  color: #fff;
+}
+#hero h2 {
+  color: #aeaeae;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#hero .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 3px;
+  margin: 10px;
+  color: #646363;
+  background: #bada55;
+}
+#hero .btn-get-started:hover {
+  transition: 0.5s;
+  background: #646363;
+  color: #bada55;
+}
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    line-height: 22px;
+  }
+}
+/*******************
+Nosotros, Index
+*******************/
+.nosotrosInfo {
+  background-color: #646363;
+  padding-right: 0;
+  margin-right: 0;
+  --bs-gutter-x: 0;
+  height: auto;
+  align-items: center;
+  color: white;
+  padding-left: 10px;
+  article{
+    img{
+      margin-left: 0;
+    }
+  }
+}
+.accordion-flush .accordion-item .accordion-button{
+  background-color: #949494;
+  border: 3px solid #bada55;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: white;
+  
+}
+.accordion-item:last-of-type .accordion-button.collapsed{
+  background: #949494;
+  color: white;
+  border-radius: 10px;
+  border: 3px solid #bada55;
+}
+.accordion-item{
+  background-color: #646363;
+}
+.numberAcordion{
+  color: #bada55;
+  margin-right: 10px;
+}
+.itemNumber5{
+  margin-bottom: 10px;
+}
+/******************
+Comentarios, Index
+********************/
+.comentarios::before a{
+  display: none;
+}
+.eapps-widget-toolbar-panel{
+  display: none!important;
+}
+.eapps-widget-toolbar-panel-share-button{
+  display: none;
+}
 /*****************/
 /*Area Clientes*/
 /*****************/
@@ -646,7 +821,7 @@ p {
 
 @media (min-width:280) and (max-width:480) {
   #carrito.show {
-    width: 50%!important;
+    width: 50% !important;
   }
 }
 
@@ -697,7 +872,9 @@ article {
   width: auto;
   color: black;
 }
-
+.nuestraEmpresaMain{
+  padding-top: 29px;
+}
 .empresaSection {
   img {
     height: 40vh;
@@ -1503,6 +1680,7 @@ footer p a {
   }
 
   .footer {
+    margin-top: 80px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
