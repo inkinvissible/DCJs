@@ -1,8 +1,9 @@
 class Producto {
-    constructor(id, descripcion,precio) {
+    constructor(id, descripcion, precio, cantidad) {
         this.id = id;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.cantidad = cantidad;
     }
 }
 let productos = [];
@@ -15,6 +16,8 @@ productos.push(new Producto("753100", "Manija", 5000));
 
 let section = document.querySelector('.tiendaOnline.row.separar.container-fluid');
 
+
+
 for (const producto of productos) {
     let article = document.createElement("article");
     article.className = "col col-12 col-md-6 col-lg-4 carta";
@@ -24,6 +27,8 @@ for (const producto of productos) {
                             <h3 class="codigo">${producto.id}</h3>
                             <p class="descripcion">${producto.descripcion}</p>
                             <p class="precio">$${producto.precio}</p>
+                            <!--<input type="number" id="inputCantidad" placeholder="Cantidad">-->
+    
                             
     
                                 <div>
@@ -35,12 +40,13 @@ for (const producto of productos) {
                             </svg>
                                     <a href="" data-id="${producto.id}" class="btn-add">Agregar al Carrito</a>
                                     </div>
-                                    <!--<a href="" id="detalles${producto.id}" class="btnDetalles">Ver detalles</a>-->
+                                   
                                 </div>
                             </div>`;
     // Agregar a sección y no al documento
     section.appendChild(article);
 }
+
 //Filtros de Productos
 let filtros = document.getElementById('filtro');
 
@@ -52,7 +58,7 @@ filtros.onclick = () => {
 let svgCart = document.getElementById('svgCart');
 svgCart.onclick = () => {
     let section = document.getElementById('carrito');
-    
+
     if (section.classList.contains('noShow')) {
         svgCart.classList.add('noShow');
         section.classList.remove('noShow');
@@ -64,6 +70,7 @@ svgCart.onclick = () => {
     }
 }
 
+let sumaProductos = 0;
 // Escuchar clics en listado de productos
 section.addEventListener('click', e => {
     // Solo si el clic fue en botón para agregar producto
@@ -76,16 +83,19 @@ section.addEventListener('click', e => {
         // Obtener descripción y precio, buscando primero el padre y luego el elemento por clase
         let descrip = e.target.closest('article').querySelector('.descripcion').textContent;
         let price = e.target.closest('article').querySelector('.precio').textContent;
-        // Insertar en arreglo, deberías guardarlo en algún lado, localStorage o cookie
+        // let cantidad = e.target.closest('article').querySelector('.cantidad').textContent;
+        // Insertar en arreglo, localStorage o cookie
+        //Sumar Carrito
+        sumaProductos += price;
+        $('#selectOption').append(`<p>${sumaProductos}</p>`);
+        //Hacer Push al Local Storage
         carritos.push({ productId, descrip, price});
+
+        alertify.success('Producto agregado con éxito');
         let carritoEnJson = JSON.stringify(carritos);
         localStorage.setItem('CarritoProductos', carritoEnJson);
-        // Swal.fire(
-        //     '¡WOW! ¡Felicidades!',
-        //     'Agregaste tu producto al carrito',
-        //     'success'
-        //   )
-        // Agregar HTML al carrito
+
+        //HAY QUE MOSTRAR QUE SE AGREGO EL PRODUCTO AL CARRITO
         let article = document.createElement('article');
         article.className = 'col col-sm-12 col-md-12 col-lg-12 col-xl-12'
         article.innerHTML = ` <div class="divCarrito row container-fluid">
@@ -98,31 +108,15 @@ section.addEventListener('click', e => {
         sectionCarrito.appendChild(article);
     }
 });
-let arrayLocal = JSON.parse(localStorage.getItem('CarritoProductos'));
+
 
 //Eliminar los productos del carrito onclick
 let deleteBtn = document.getElementById('svgEliminar');
-deleteBtn.onclick = () =>{
+deleteBtn.onclick = () => {
     localStorage.removeItem('CarritoProductos');
     location.reload();
 }
 
-if (arrayLocal !== "") {
-    let sectionCarrito = document.getElementById('carrito');
-    
-    for (const producto of arrayLocal) {
-        let article = document.createElement('article');
-        article.className = 'col col-sm-12 col-md-12 col-lg-12 col-xl-12'
-        article.innerHTML = ` <div class="divCarrito row container-fluid">
-                                <img src="../imagenes/ft-nosotros.jpg" alt="" class="imgCarrito col col-md-6 col-lg-6 col-6">
-        
-                                    <div class="col col-md-6 col-lg-6 col-6">
-                                        <h5>${producto.productId} - ${producto.descrip}-${producto.price}</h5>
-                                    </div>
-                            </div>`
-        sectionCarrito.appendChild(article);
-    }
-}
 
 //Buscar Productos
 // Declarar una variable para acceder al campo
@@ -138,7 +132,7 @@ busqueda.addEventListener('input', e => {
         // Buscar ID de producto
         let id = article.querySelector('.codigo').textContent;
         // Mostrar si la búsqueda es cadena vacía o si ID de producto incluye la cadena
-        if(buscar == '' || id.includes(buscar)) {
+        if (buscar == '' || id.includes(buscar)) {
             article.style.display = 'block';
         } else {
             // No coincide la búsqueda, ocultar
@@ -146,3 +140,27 @@ busqueda.addEventListener('input', e => {
         }
     });
 });
+
+let filtroPrecio = document.querySelector('#filtroPrecio');
+// Asignar evento
+filtroPrecio.addEventListener('input', e => {
+    // Obtener valor del campo, ignorando espacios en los extremos
+    let buscar = filtroPrecio.value.trim();
+    // Obtener todos los productos (HTML, no el arreglo) por clase
+    let prodHtml = document.querySelectorAll('.carta');
+    // Recorrer todos los elementos
+    prodHtml.forEach(article => {
+        // Buscar ID de producto
+        let price = article.querySelector('.precio').textContent;
+        // Mostrar si la búsqueda es cadena vacía o si ID de producto incluye la cadena
+        if (buscar == '' || price.includes(buscar)) {
+            article.style.display = 'block';
+        } else {
+            // No coincide la búsqueda, ocultar
+            article.style.display = 'none';
+        }
+    });
+});
+
+
+

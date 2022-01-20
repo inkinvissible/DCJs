@@ -285,6 +285,23 @@ header {
 .bodyRubros {
   background-color: #bada55; }
 
+.btnIntro {
+  padding: 11px;
+  margin-left: 15px;
+  margin-top: 20px;
+  border: 2px solid #646363;
+  text-decoration: none;
+  text-align: center;
+  color: #646363;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 10px; }
+
+.btnIntro:hover {
+  background-color: #646363;
+  color: #BADA55;
+  border: 2px solid white; }
+
 main h2 {
   margin: 20px 0 10px 0; }
 
@@ -346,85 +363,46 @@ Inicio, Index
   padding-left: 0;
   padding-right: 0; }
 
-.difuminado {
-  position: absolute;
-  width: 90%;
-  border-radius: 20px;
-  top: 13%;
-  left: 5%;
-  right: 5%;
-  z-index: 9;
-  -webkit-box-shadow: inset -1px 2px 37px 50px #fff, -1px 2px 37px 31px #fff;
-  box-shadow: inset -1px 2px 37px 50px #fff, -1px 2px 37px 31px #fff;
-  background: #BADA55; }
-
 /*******************
-Hero Section, Index
+Intro Section, Index
 ********************/
-#hero {
-  width: 100%;
-  height: 100vh;
-  background: url("../imagenes/hero-auto-bmw.jpg");
-  background-repeat: no-repeat; }
+.mainIndex {
+  padding-top: 85px;
+  background-color: #BADA55; }
 
-#hero .hero-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
-  backdrop-filter: blur(5px); }
+.bold {
+  font-weight: 700; }
 
-#hero .hero-logo {
-  margin-bottom: 30px; }
-
-#hero h1 {
-  margin: 0 0 30px 0;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 56px;
-  color: #fff; }
-
-#hero h2 {
-  color: #aeaeae;
-  margin-bottom: 30px;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase; }
-
-#hero .btn-get-started {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 3px;
-  margin: 10px;
-  color: #646363;
-  background: #bada55; }
-
-#hero .btn-get-started:hover {
-  transition: 0.5s;
-  background: #646363;
-  color: #bada55; }
-
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed; } }
-
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px; }
-  #hero h2 {
-    line-height: 22px; } }
+.introSection {
+  background-image: url(../imagenes/first-image.jpg);
+  height: 90vh; }
+  .introSection .btnIntro {
+    padding: 10px;
+    width: 15%;
+    height: 7vh;
+    position: absolute;
+    top: 55%;
+    margin-left: 15px;
+    margin-top: 51px !important;
+    font-size: 23px;
+    margin-top: 20px;
+    border: 2px solid #646363;
+    text-decoration: none;
+    text-align: center;
+    color: #646363;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 10px; }
+  .introSection .btnIntro:hover {
+    background-color: #646363;
+    color: #BADA55;
+    border: 2px solid white; }
+  .introSection div {
+    margin-bottom: 50px;
+    color: #646363;
+    padding-left: 15px; }
+    .introSection div #h1Intro {
+      display: block; }
 
 /*******************
 Nosotros, Index
@@ -483,91 +461,95 @@ Comentarios, Index
   width: 100px;
   margin-bottom: 12px; }
 
+#inputCantidad {
+  width: 22%;
+  margin-bottom: 1%; }
+
 .h3Clientes {
   margin-top: 20px; }
 
-.mainAreaClientes .tiendaOnline {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-around; }
-  .mainAreaClientes .tiendaOnline .carta {
-    width: 425px;
-    height: 438px;
-    background-color: white;
-    color: #646363;
-    border-color: #000 3px solid;
-    border-radius: 20px;
-    /* The slow way */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease-in-out;
-    margin-top: 20px; }
-    .mainAreaClientes .tiendaOnline .carta:hover {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
-    .mainAreaClientes .tiendaOnline .carta img {
-      width: 423px;
-      height: 217px;
-      margin-top: 5px;
-      border-radius: 20px; }
-    .mainAreaClientes .tiendaOnline .carta div h3.codigo {
-      margin-top: 15px; }
-    .mainAreaClientes .tiendaOnline .carta div div {
-      display: flex;
-      justify-content: space-around;
+.mainAreaClientes {
+  padding-top: 10px; }
+  .mainAreaClientes .tiendaOnline {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around; }
+    .mainAreaClientes .tiendaOnline .carta {
+      width: 425px;
+      height: 438px;
+      background-color: white;
+      color: #646363;
+      border-color: #000 3px solid;
+      border-radius: 20px;
+      /* The slow way */
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.3s ease-in-out;
+      margin-top: 20px; }
+      .mainAreaClientes .tiendaOnline .carta:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+      .mainAreaClientes .tiendaOnline .carta img {
+        width: 423px;
+        height: 217px;
+        margin-top: 5px;
+        border-radius: 20px; }
+      .mainAreaClientes .tiendaOnline .carta div h3.codigo {
+        margin-top: 15px; }
+      .mainAreaClientes .tiendaOnline .carta div div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
+        .mainAreaClientes .tiendaOnline .carta div div .btnCompra {
+          background-color: #bada55;
+          border-radius: 20px;
+          height: 35px;
+          width: 50%;
+          padding: 5px;
+          text-align: center;
+          transition: box-shadow 0.3s ease-in-out; }
+          .mainAreaClientes .tiendaOnline .carta div div .btnCompra:hover {
+            box-shadow: 4px 4px 13px -2px rgba(79, 79, 79, 0.76);
+            -webkit-box-shadow: 4px 4px 13px -2px rgba(79, 79, 79, 0.76);
+            -moz-box-shadow: 4px 4px 13px -2px rgba(79, 79, 79, 0.76); }
+        .mainAreaClientes .tiendaOnline .carta div div .btnDetalles {
+          width: 30%;
+          color: #646363; }
+  .mainAreaClientes .searchBar {
+    background-color: #BADA55;
+    height: 10vh;
+    margin-top: 50px;
+    align-items: center;
+    --bs-gutter-x: 0; }
+    .mainAreaClientes .searchBar div {
+      margin-left: 40px;
+      display: inline-flex;
+      margin-right: 40px;
       align-items: center; }
-      .mainAreaClientes .tiendaOnline .carta div div .btnCompra {
-        background-color: #bada55;
-        border-radius: 20px;
-        height: 35px;
-        width: 50%;
-        padding: 5px;
-        text-align: center;
-        transition: box-shadow 0.3s ease-in-out; }
-        .mainAreaClientes .tiendaOnline .carta div div .btnCompra:hover {
-          box-shadow: 4px 4px 13px -2px rgba(79, 79, 79, 0.76);
-          -webkit-box-shadow: 4px 4px 13px -2px rgba(79, 79, 79, 0.76);
-          -moz-box-shadow: 4px 4px 13px -2px rgba(79, 79, 79, 0.76); }
-      .mainAreaClientes .tiendaOnline .carta div div .btnDetalles {
+      .mainAreaClientes .searchBar div p {
+        margin-bottom: 0px;
+        margin-right: 2px;
+        cursor: pointer; }
+      .mainAreaClientes .searchBar div .carritoComprasResumen {
+        border: 10px solid black;
+        background-color: #000;
+        border-radius: 15px;
         width: 30%;
-        color: #646363; }
-
-.mainAreaClientes .searchBar {
-  background-color: #BADA55;
-  height: 10vh;
-  margin-top: 50px;
-  align-items: center;
-  --bs-gutter-x: 0; }
-  .mainAreaClientes .searchBar div {
-    margin-left: 40px;
-    display: inline-flex;
-    margin-right: 40px;
-    align-items: center; }
-    .mainAreaClientes .searchBar div p {
-      margin-bottom: 0px;
-      margin-right: 2px;
-      cursor: pointer; }
-    .mainAreaClientes .searchBar div .carritoComprasResumen {
-      border: 10px solid black;
-      background-color: #000;
-      border-radius: 15px;
-      width: 30%;
-      position: absolute;
-      z-index: 1;
-      top: 60%;
-      right: 8%; }
-      .mainAreaClientes .searchBar div .carritoComprasResumen .noShow {
-        display: none; }
-  .mainAreaClientes .searchBar .inputBusqueda {
-    width: 70%;
-    height: 32px;
-    margin-left: 5px; }
-
-.mainAreaClientes .inputIcon {
-  background-color: #fff;
-  padding: 5px;
-  border-radius: 20px; }
-  .mainAreaClientes .inputIcon input {
-    border: 0;
-    outline: none; }
+        position: absolute;
+        z-index: 1;
+        top: 60%;
+        right: 8%; }
+        .mainAreaClientes .searchBar div .carritoComprasResumen .noShow {
+          display: none; }
+    .mainAreaClientes .searchBar .inputBusqueda {
+      width: 70%;
+      height: 32px;
+      margin-left: 5px; }
+  .mainAreaClientes .inputIcon {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 20px; }
+    .mainAreaClientes .inputIcon input {
+      border: 0;
+      outline: none; }
 
 @media (min-width: 280px) and (max-width: 470px) {
   #searchBar {
@@ -663,6 +645,40 @@ article .divCarrito {
   line-height: 20px; }
   #svgCartnoShow {
     max-width: 0; }
+
+/*****************
+Tienda, tienda.html
+*******************/
+.mainTienda {
+  padding-top: 84px; }
+  .mainTienda section {
+    display: flex;
+    justify-content: center; }
+    .mainTienda section .cardTienda {
+      height: auto;
+      width: 80%;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 10px;
+      border: 1.5px solid #646363;
+      transition: box-shadow 0.5s ease-in-out; }
+      .mainTienda section .cardTienda:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+      .mainTienda section .cardTienda .inputYSvg {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around; }
+        .mainTienda section .cardTienda .inputYSvg input {
+          width: 100px;
+          margin-right: 25px;
+          margin-top: 5px; }
+      .mainTienda section .cardTienda #svgEliminar {
+        margin-right: 10px; }
+      .mainTienda section .cardTienda img {
+        width: 150px;
+        margin-right: 38px; }
 
 /*****************/
 /*Nuestra Empresa*/
@@ -856,23 +872,6 @@ Intro & index
 .h2Intro {
   margin-bottom: 20px; }
 
-.btnIntro {
-  padding: 10px;
-  width: 10% !important;
-  margin-top: 20px;
-  border: 2px solid #646363;
-  text-decoration: none;
-  text-align: center;
-  color: #646363;
-  background-color: white;
-  transition: all 0.5s ease-in-out;
-  margin-bottom: 10px; }
-
-.btnIntro:hover {
-  background-color: #646363;
-  color: #BADA55;
-  border: 2px solid white; }
-
 /* Contacto */
 .formContacto {
   height: 50vh; }
@@ -1063,7 +1062,9 @@ form p label {
 @media (min-width: 280px) and (max-width: 500px) {
   .h1Responsive {
     margin-top: 78px;
-    text-align: center; } }
+    text-align: center; }
+  .introSection .btnIntro {
+    font-size: 10px; } }
 
 @media (min-width: 1467px) and (max-width: 1920px) {
   .portadaLg {

@@ -12,7 +12,7 @@ body {
   min-height: 100%;
   font-family: 'Josefin Sans', sans-serif;
   max-width: 100%;
-  
+
 
 }
 
@@ -265,7 +265,7 @@ header {
   background-color: #BADA55;
 }
 
-.headerLg{
+.headerLg {
   display: grid;
   padding-left: 0 !important;
   position: fixed;
@@ -380,6 +380,25 @@ header {
   background-color: #bada55;
 }
 
+.btnIntro {
+  padding: 11px;
+  margin-left: 15px;
+  margin-top: 20px;
+  border: 2px solid #646363;
+  text-decoration: none;
+  text-align: center;
+  color: #646363;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.btnIntro:hover {
+  background-color: #646363;
+  color: #BADA55;
+  border: 2px solid white;
+}
+
 main h2 {
   margin: 20px 0 10px 0;
 }
@@ -451,99 +470,65 @@ Inicio, Index
   -webkit-box-shadow: -2px -142px 110px -72px rgba(79, 79, 79, 0.81) inset;
   -moz-box-shadow: -2px -142px 110px -72px rgba(79, 79, 79, 0.81) inset;
 }
-.principalSection{
+
+.principalSection {
   padding-left: 0;
   padding-right: 0;
 }
-.difuminado {
-  position: absolute;
-  width: 90%;
-  border-radius: 20px;
-  top: 13%;
-  left: 5%;
-  right: 5%;
-  z-index: 9;
-  -webkit-box-shadow: inset -1px 2px 37px 50px #fff, -1px 2px 37px 31px #fff;
-  box-shadow: inset -1px 2px 37px 50px #fff, -1px 2px 37px 31px #fff;
-  background: #BADA55;
-}
+
 /*******************
-Hero Section, Index
+Intro Section, Index
 ********************/
-#hero {
-  width: 100%;
-  height: 100vh;
-  background: url("../imagenes/hero-auto-bmw.jpg");
-  background-repeat: no-repeat;
-}
-#hero .hero-container {
-  position: absolute;
-  
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
-  
-    backdrop-filter: blur(5px);
-   
-
+.mainIndex {
+  padding-top: 85px;
+  background-color: #BADA55;
 }
 
-#hero .hero-logo {
-  margin-bottom: 30px;
+.bold {
+  font-weight: 700;
 }
-#hero h1 {
-  margin: 0 0 30px 0;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 56px;
-  color: #fff;
-}
-#hero h2 {
-  color: #aeaeae;
-  margin-bottom: 30px;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-#hero .btn-get-started {
-  font-family: "Montserrat", sans-serif;
-  
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 3px;
-  margin: 10px;
-  color: #646363;
-  background: #bada55;
-}
-#hero .btn-get-started:hover {
-  transition: 0.5s;
-  background: #646363;
-  color: #bada55;
-}
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
+
+.introSection {
+  background-image: url(../imagenes/first-image.jpg);
+  height: 90vh;
+
+  .btnIntro {
+    padding: 10px;
+    width: 15%;
+    height: 7vh;
+    position: absolute;
+    top: 55%;
+    margin-left: 15px;
+    margin-top: 51px !important;
+    font-size: 23px;
+    margin-top: 20px;
+    border: 2px solid #646363;
+    text-decoration: none;
+    text-align: center;
+    color: #646363;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 10px;
+  }
+
+  .btnIntro:hover {
+    background-color: #646363;
+    color: #BADA55;
+    border: 2px solid white;
+  }
+
+  div {
+    margin-bottom: 50px;
+    color: #646363;
+
+    padding-left: 15px;
+
+    #h1Intro {
+      display: block;
+    }
   }
 }
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-  #hero h2 {
-    line-height: 22px;
-  }
-}
+
 /*******************
 Nosotros, Index
 *******************/
@@ -556,48 +541,58 @@ Nosotros, Index
   align-items: center;
   color: white;
   padding-left: 10px;
-  article{
-    img{
+
+  article {
+    img {
       margin-left: 0;
     }
   }
 }
-.accordion-flush .accordion-item .accordion-button{
+
+.accordion-flush .accordion-item .accordion-button {
   background-color: #949494;
   border: 3px solid #bada55;
   border-radius: 10px;
   margin-right: 10px;
   color: white;
-  
+
 }
-.accordion-item:last-of-type .accordion-button.collapsed{
+
+.accordion-item:last-of-type .accordion-button.collapsed {
   background: #949494;
   color: white;
   border-radius: 10px;
   border: 3px solid #bada55;
 }
-.accordion-item{
+
+.accordion-item {
   background-color: #646363;
 }
-.numberAcordion{
+
+.numberAcordion {
   color: #bada55;
   margin-right: 10px;
 }
-.itemNumber5{
+
+.itemNumber5 {
   margin-bottom: 10px;
 }
+
 /******************
 Comentarios, Index
 ********************/
-.comentarios::before a{
+.comentarios::before a {
   display: none;
 }
-.eapps-widget-toolbar-panel{
-  display: none!important;
+
+.eapps-widget-toolbar-panel {
+  display: none !important;
 }
-.eapps-widget-toolbar-panel-share-button{
+
+.eapps-widget-toolbar-panel-share-button {
   display: none;
 }
+
 /*****************/
 /*Area Clientes*/
 /*****************/
@@ -606,12 +601,17 @@ Comentarios, Index
   width: 100px;
   margin-bottom: 12px;
 }
-
+#inputCantidad {
+  width: 22%;
+  margin-bottom: 1%;
+}
 .h3Clientes {
   margin-top: 20px;
 }
 
 .mainAreaClientes {
+  padding-top: 10px;
+
   .tiendaOnline {
     margin-top: 50px;
     display: flex;
@@ -863,6 +863,50 @@ article {
   }
 }
 
+/*****************
+Tienda, tienda.html
+*******************/
+.mainTienda {
+  padding-top: 84px;
+
+  section {
+      display: flex;
+      justify-content: center;
+    .cardTienda {
+      height: auto;
+      width: 80%;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 10px;
+      border: 1.5px solid #646363;
+      transition: box-shadow 0.5s ease-in-out;
+
+      &:hover{
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      .inputYSvg{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        input{
+          width: 100px;
+          margin-right: 25px;
+          margin-top: 5px;
+        }
+      }
+      #svgEliminar {
+        margin-right: 10px;
+      }
+
+      img {
+        width: 150px;
+        margin-right: 38px;
+      }
+    }
+  }
+}
 
 /*****************/
 /*Nuestra Empresa*/
@@ -872,9 +916,11 @@ article {
   width: auto;
   color: black;
 }
-.nuestraEmpresaMain{
+
+.nuestraEmpresaMain {
   padding-top: 29px;
 }
+
 .empresaSection {
   img {
     height: 40vh;
@@ -1068,6 +1114,8 @@ Intro & index
 /*Rubros*/
 /*****************/
 //Rubros
+
+
 .botonSlide {
   color: $verde !important;
   background-color: $verde !important;
@@ -1135,25 +1183,7 @@ Intro & index
   margin-bottom: 20px;
 }
 
-.btnIntro {
-  padding: 10px;
-  width: 10% !important;
 
-  margin-top: 20px;
-  border: 2px solid #646363;
-  text-decoration: none;
-  text-align: center;
-  color: #646363;
-  background-color: white;
-  transition: all 0.5s ease-in-out;
-  margin-bottom: 10px;
-}
-
-.btnIntro:hover {
-  background-color: #646363;
-  color: #BADA55;
-  border: 2px solid white;
-}
 
 
 
@@ -1422,6 +1452,10 @@ form p label {
   .h1Responsive {
     margin-top: 78px;
     text-align: center;
+  }
+
+  .introSection .btnIntro {
+    font-size: 10px;
   }
 }
 
